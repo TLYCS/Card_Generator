@@ -39,7 +39,7 @@ export default function Home() {
       </Head>
 
       <main className="">
-        <h1 className="text-3xl">Holiday Card Generator</h1>
+        <h1 className="text-3xl">Give the Gift of Giving</h1>
         <header className="flex border-b-2 mt-7 mb-7">
           <Link href="#">
             <a
@@ -50,7 +50,7 @@ export default function Home() {
               } `}
               onClick={() => setTab("harvest")}
             >
-              harvest month
+              Global Health + Development
             </a>
           </Link>
           <Link href="#">
@@ -62,7 +62,7 @@ export default function Home() {
               } `}
               onClick={() => setTab("thanksgiving")}
             >
-              thanksgiving
+              Animal Welfare
             </a>
           </Link>
           <Link href="#">
@@ -74,7 +74,7 @@ export default function Home() {
               } `}
               onClick={() => setTab("diwali")}
             >
-              diwali
+              Sustainability + Futurism
             </a>
           </Link>
         </header>
