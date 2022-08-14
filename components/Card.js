@@ -20,7 +20,7 @@ export const Card = ({ message, name, publicId, name_2 }) => {
 
   return (
     <div>
-      <CloudinaryContext cloudName="dtgbzmpca">
+      <CloudinaryContext cloudName="warmglowgiving">
         <Image publicId={publicId} width={1000} ref={ref}>
           <Transformation crop="fit" effect="blur:100" />
           <Transformation effect="brightness_hsb:-50" />

@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="p-10">
       <Head>
-        <title>Holiday Card</title>
+        <title>Warm Glow Giving</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -80,7 +80,7 @@ export default function Home() {
           </Link>
         </header>
         <form onSubmit={handleSubmit} className="lg:w-2/5">
-          <CloudinaryContext cloudName="dtgbzmpca">
+          <CloudinaryContext cloudName="warmglowgiving">
             <section className="mb-6">
               <label className="block text-sm text-[#535353] mb-2">
                 Select Card Art:
