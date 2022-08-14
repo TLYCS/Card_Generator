@@ -82,7 +82,7 @@ export default function Home() {
           <CloudinaryContext cloudName="dtgbzmpca">
             <section className="mb-6">
               <label className="block text-sm text-[#535353] mb-2">
-                Select an image
+                Select Card Art:
               </label>
               {tab === "harvest" ? (
                 <div className="flex items-center">
@@ -163,7 +163,7 @@ export default function Home() {
             </section>
           </CloudinaryContext>
           <div className="mb-6">
-            <label className="block text-sm text-[#535353] mb-2">Message</label>
+            <label className="block text-sm text-[#535353] mb-2">Write a Personal Message:</label>
             <textarea
               rows="4"
               required
@@ -175,7 +175,7 @@ export default function Home() {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-sm text-[#535353] mb-2">Name</label>
+            <label className="block text-sm text-[#535353] mb-2">Sign your Name:</label>
             <input
               required
               name="name"
