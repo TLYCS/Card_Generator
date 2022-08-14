@@ -13,6 +13,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     message: "",
     name: "",
+    name_2:"",
     publicId: null,
     error: false
   });
@@ -162,6 +163,16 @@ export default function Home() {
               )}
             </section>
           </CloudinaryContext>
+        <div className="mb-6">
+            <label className="block text-sm text-[#535353] mb-2">Specify Recipient:</label>
+            <input
+              required
+              name="name_2"
+              value={formData.name_2}
+              onChange={handleChange}
+              className="w-full h-10 border-[#B7B3B3] border rounded-sm p-2"
+            />
+          </div>
           <div className="mb-6">
             <label className="block text-sm text-[#535353] mb-2">Write a Personal Message:</label>
             <textarea
@@ -194,6 +205,7 @@ export default function Home() {
             <Card
               message={formData.message}
               name={formData.name}
+              name_2={formData.name_2}
               publicId={formData.publicId}
             />
           </div>

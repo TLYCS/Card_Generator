@@ -1,7 +1,7 @@
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useEffect, useRef, useState } from "react";
 
-export const Card = ({ message, name, publicId }) => {
+export const Card = ({ message, name, publicId, name_2 }) => {
   const ref = useRef(null);
   const [url, setURL] = useState("");
   const [copy, setCopy] = useState("Copy File");
@@ -38,6 +38,15 @@ export const Card = ({ message, name, publicId }) => {
             crop="fit"
           />
           <Transformation flags="layer_apply" />
+          <Transformation
+            color="#FFFFFF"
+            overlay={{
+              fontFamily: "Dancing Script",
+              fontSize: 50,
+              fontWeight: "bold",
+              text: `Dear ${name_2}`
+            }}
+          />
           <Transformation
             color="#FFFFFF"
             overlay={{
