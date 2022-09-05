@@ -13,6 +13,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     message: "",
     name: "",
+    name_2:"",
     publicId: null,
     error: false
   });
@@ -34,12 +35,12 @@ export default function Home() {
   return (
     <div className="p-10">
       <Head>
-        <title>Holiday Card</title>
+        <title>Warm Glow Giving</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="">
-        <h1 className="text-3xl">Holiday Card Generator</h1>
+        <h1 className="text-3xl">Give the Gift of Giving</h1>
         <header className="flex border-b-2 mt-7 mb-7">
           <Link href="#">
             <a
@@ -50,7 +51,7 @@ export default function Home() {
               } `}
               onClick={() => setTab("harvest")}
             >
-              harvest month
+              Global Health + Development
             </a>
           </Link>
           <Link href="#">
@@ -62,7 +63,7 @@ export default function Home() {
               } `}
               onClick={() => setTab("thanksgiving")}
             >
-              thanksgiving
+              Animal Welfare
             </a>
           </Link>
           <Link href="#">
@@ -74,15 +75,15 @@ export default function Home() {
               } `}
               onClick={() => setTab("diwali")}
             >
-              diwali
+              Sustainability + Futurism
             </a>
           </Link>
         </header>
         <form onSubmit={handleSubmit} className="lg:w-2/5">
-          <CloudinaryContext cloudName="dtgbzmpca">
+          <CloudinaryContext cloudName="warmglowgiving">
             <section className="mb-6">
               <label className="block text-sm text-[#535353] mb-2">
-                Select an image
+                Select Card Art:
               </label>
               {tab === "harvest" ? (
                 <div className="flex items-center">
@@ -162,8 +163,18 @@ export default function Home() {
               )}
             </section>
           </CloudinaryContext>
+        <div className="mb-6">
+            <label className="block text-sm text-[#535353] mb-2">Specify Recipient:</label>
+            <input
+              required
+              name="name_2"
+              value={formData.name_2}
+              onChange={handleChange}
+              className="w-full h-10 border-[#B7B3B3] border rounded-sm p-2"
+            />
+          </div>
           <div className="mb-6">
-            <label className="block text-sm text-[#535353] mb-2">Message</label>
+            <label className="block text-sm text-[#535353] mb-2">Write a Personal Message:</label>
             <textarea
               rows="4"
               required
@@ -175,7 +186,7 @@ export default function Home() {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-sm text-[#535353] mb-2">Name</label>
+            <label className="block text-sm text-[#535353] mb-2">Sign your Name:</label>
             <input
               required
               name="name"
@@ -194,6 +205,7 @@ export default function Home() {
             <Card
               message={formData.message}
               name={formData.name}
+              name_2={formData.name_2}
               publicId={formData.publicId}
             />
           </div>
