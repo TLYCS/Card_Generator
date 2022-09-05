@@ -3,12 +3,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { Card } from "../components/Card";
-import harvest from "../utils/harvest.json";
-import thanksgiving from "../utils/thanksgiving.json";
-import diwali from "../utils/diwali.json";
+import GHD from "../utils/GHD.json";
+import AW from "../utils/AW.json";
+import SF from "../utils/SF.json";
+import 'tw-elements';
 
 export default function Home() {
-  const [tab, setTab] = useState("harvest");
+  const [tab, setTab] = useState("GHD");
   const [imageId, setImageId] = useState(null);
   const [formData, setFormData] = useState({
     message: "",
@@ -33,6 +34,7 @@ export default function Home() {
   };
 
   return (
+    
     <div className="p-10">
       <Head>
         <title>Warm Glow Giving</title>
@@ -45,11 +47,11 @@ export default function Home() {
           <Link href="#">
             <a
               className={`text-base capitalize mr-8 pb-4 ${
-                tab === "harvest"
+                tab === "GHD"
                   ? "font-bold border-b-4 border-[#1D4ED8] text-[#1D4ED8]"
                   : "text-[#5A5A7D]"
               } `}
-              onClick={() => setTab("harvest")}
+              onClick={() => setTab("GHD")}
             >
               Global Health + Development
             </a>
@@ -57,11 +59,11 @@ export default function Home() {
           <Link href="#">
             <a
               className={`text-base capitalize mr-8 pb-4 ${
-                tab === "thanksgiving"
+                tab === "AW"
                   ? "font-bold border-b-4 border-[#1D4ED8] text-[#1D4ED8]"
                   : "text-[#5A5A7D]"
               } `}
-              onClick={() => setTab("thanksgiving")}
+              onClick={() => setTab("AW")}
             >
               Animal Welfare
             </a>
@@ -69,11 +71,11 @@ export default function Home() {
           <Link href="#">
             <a
               className={`text-base capitalize mr-8 pb-4 ${
-                tab === "diwali"
+                tab === "SF"
                   ? "font-bold border-b-4 border-[#1D4ED8] text-[#1D4ED8]"
                   : "text-[#5A5A7D]"
               } `}
-              onClick={() => setTab("diwali")}
+              onClick={() => setTab("SF")}
             >
               Sustainability + Futurism
             </a>
@@ -85,9 +87,9 @@ export default function Home() {
               <label className="block text-sm text-[#535353] mb-2">
                 Select Card Art:
               </label>
-              {tab === "harvest" ? (
+              {tab === "GHD" ? (
                 <div className="flex items-center">
-                  {harvest.map((img) => (
+                  {GHD.map((img) => (
                     <div
                       key={img.id}
                       className={`mr-2 ${
@@ -109,9 +111,9 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              ) : tab === "thanksgiving" ? (
+              ) : tab === "AW" ? (
                 <div className="flex items-center">
-                  {thanksgiving.map((img) => (
+                  {AW.map((img) => (
                     <div
                       key={img.id}
                       className={`mr-2 ${
@@ -135,7 +137,7 @@ export default function Home() {
                 </div>
               ) : (
                 <div className="flex items-center">
-                  {diwali.map((img) => (
+                  {SF.map((img) => (
                     <div
                       key={img.id}
                       className={`mr-2 ${
@@ -157,11 +159,13 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
               )}
               {formData.error && (
                 <p className="text-sm text-red-500">Please select an image</p>
               )}
             </section>
+            
           </CloudinaryContext>
         <div className="mb-6">
             <label className="block text-sm text-[#535353] mb-2">Specify Recipient:</label>
@@ -173,6 +177,138 @@ export default function Home() {
               className="w-full h-10 border-[#B7B3B3] border rounded-sm p-2"
             />
           </div>
+          <div class="flex justify-center">
+            <div>
+              <div class="dropdown relative">
+                <button
+                  className="
+                    dropdown-toggle
+                    px-6
+                    py-2.5
+                    bg-blue-600
+                    text-white
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    rounded
+                    shadow-md
+                    hover:bg-blue-700 hover:shadow-lg
+                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                    active:bg-blue-800 active:shadow-lg active:text-white
+                    transition
+                    duration-150
+                    ease-in-out
+                    flex
+                    items-center
+                    whitespace-nowrap
+                  "
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown button
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="caret-down"
+                    class="w-2 ml-2"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    ></path>
+                  </svg>
+                </button>
+                <ul
+                  className="
+                    dropdown-menu
+                    min-w-max
+                    absolute
+                    hidden
+                    bg-white
+                    text-base
+                    z-50
+                    float-left
+                    py-2
+                    list-none
+                    text-left
+                    rounded-lg
+                    shadow-lg
+                    mt-1
+                    hidden
+                    m-0
+                    bg-clip-padding
+                    border-none
+                  "
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <a
+                      className="
+                        dropdown-item
+                        text-sm
+                        py-2
+                        px-4
+                        font-normal
+                        block
+                        w-full
+                        whitespace-nowrap
+                        bg-transparent
+                        text-gray-700
+                        hover:bg-gray-100
+                      "
+                      href="#"
+                      >Action</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      className="
+                        dropdown-item
+                        text-sm
+                        py-2
+                        px-4
+                        font-normal
+                        block
+                        w-full
+                        whitespace-nowrap
+                        bg-transparent
+                        text-gray-700
+                        hover:bg-gray-100
+                      "
+                      href="#"
+                      >Another action</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      className="
+                        dropdown-item
+                        text-sm
+                        py-2
+                        px-4
+                        font-normal
+                        block
+                        w-full
+                        whitespace-nowrap
+                        bg-transparent
+                        text-gray-700
+                        hover:bg-gray-100
+                      "
+                      href="#"
+                      >Something else here</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div className="mb-6">
             <label className="block text-sm text-[#535353] mb-2">Write a Personal Message:</label>
             <textarea
@@ -181,7 +317,7 @@ export default function Home() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              maxLength={140}
+              maxLength={500}
               className="w-full border-[#B7B3B3] border rounded-sm p-2"
             />
           </div>
