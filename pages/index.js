@@ -6,7 +6,7 @@ import { Card } from "../components/Card";
 import GHD from "../utils/GHD.json";
 import AW from "../utils/AW.json";
 import SF from "../utils/SF.json";
-import 'tw-elements';
+
 
 export default function Home() {
   const [tab, setTab] = useState("GHD");
