@@ -19,6 +19,7 @@ export const Card = ({ message, name, publicId, name_2 }) => {
   };
 
   return (
+    
     <div>
       <CloudinaryContext cloudName="warmglowgiving">
         <Image publicId={publicId} width={1000} ref={ref}>
@@ -26,15 +27,16 @@ export const Card = ({ message, name, publicId, name_2 }) => {
           <Transformation effect="brightness_hsb:-50" />
           <Transformation
             color="#FFFFFF"
+            flags="text_disallow_overflow"
             overlay={{
               background: "",
               fontFamily: "Neucha",
-              fontSize: 100,
+              fontSize: 50,
               fontWeight: "bold",
               text: message,
               textAlign: "center"
             }}
-            width="1300"
+            width="800"
             crop="fit"
           />
           <Transformation flags="layer_apply" />
