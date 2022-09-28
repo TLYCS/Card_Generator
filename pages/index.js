@@ -108,6 +108,62 @@ export default function Home() {
                       </Image>
                     </div>
                   ))}
+                  <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                      <select
+                        class="form-select appearance-none
+                                block
+                                w-full
+                                px-3
+                                py-1.5
+                                text-base
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select a Charity </option>
+                        <option value="1">Against Malaria Foundation</option>
+                        <option value="2">
+                          Development Media International
+                        </option>
+                        <option value="3">Equalize Health</option>
+                        <option value="4">Evidence Action</option>
+                        <option value="5">Fistula Foundation</option>
+                        <option value="6">The Fred Hollows Foundation</option>
+                        <option value="7">GiveDirectly</option>
+                        <option value="8">
+                          GAIN’s Salt Iodization Program
+                        </option>
+                        <option value="9">Helen Keller International</option>
+                        <option value="10">
+                          Innovations for Poverty Action
+                        </option>
+                        <option value="11">Iodine Global Network</option>
+                        <option value="12">Living Goods</option>
+                        <option value="13">Malaria Consortium</option>
+                        <option value="14">New Incentives</option>
+                        <option value="15">One Acre Fund</option>
+                        <option value="16">Oxfam</option>
+                        <option value="17">
+                          Population Services International
+                        </option>
+                        <option value="18">
+                          Sanku – Project Healthy Children
+                        </option>
+                        <option value="19">SCI Foundation</option>
+                        <option value="20">Seva Foundation</option>
+                        <option value="21">Village Enterprise</option>
+                        <option value="22">Zusha!</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               ) : tab === "AW" ? (
                 <div className="flex items-center">
@@ -132,6 +188,34 @@ export default function Home() {
                       </Image>
                     </div>
                   ))}
+                  <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                      <select
+                        class="form-select appearance-none
+      block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding bg-no-repeat
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select a Charity </option>
+                        <option value="1">Animal Welfare Fund</option>
+                        <option value="2">The Humane League</option>
+                        <option value="3">Faunalytics</option>
+                        <option value="4">Wild Animal Initiative</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               ) : (
                 <div className="flex items-center">
@@ -156,6 +240,35 @@ export default function Home() {
                       </Image>
                     </div>
                   ))}
+                  <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                      <select
+                        class="form-select appearance-none
+      block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding bg-no-repeat
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select a Charity </option>
+                        <option value="1">Evergreen Collaborative</option>
+                        <option value="2">Clean Air Task Force</option>
+                        <option value="3">Carbon180</option>
+                        <option value="4">Long-Term Future Fund</option>
+                        <option value="5">Longtermism Fund</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               )}
               {formData.error && (
@@ -174,33 +287,6 @@ export default function Home() {
               onChange={handleChange}
               className="w-full h-10 border-[#B7B3B3] border rounded-sm p-2"
             />
-          </div>
-          <div class="flex justify-center">
-            <div class="mb-3 xl:w-96">
-              <select
-                class="form-select appearance-none
-                block
-                w-full
-                px-3
-                py-1.5
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding bg-no-repeat
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                aria-label="Default select example"
-              >
-                <option selected>Pick a Charity --</option>
-                <option value="1">charity_1</option>
-                <option value="2">charity_2</option>
-                <option value="3">charity_3</option>
-              </select>
-            </div>
           </div>
           <div className="mb-6">
             <div class="flex justify-center"></div>
