@@ -13,9 +13,7 @@ To do list:
 
 -Collect the art from the artists that have said they would donate and size them all to be the same, then replace the stand in art with the real art
 
--Create a dictionary {charity: blerb about charity- what they do, why they are impactful, what the impact of the donation will likley be}
-
--Write code to have the charity blerb/impact text show up on the card above the personal message (I think that is a good spot for it?)
+-Write code to have the charity blerb/impact text (each tab has it's own json with the charity dictionary) show up on the card above the personal message (I think that is a good spot for it?)
 
 -Deploy site
 
