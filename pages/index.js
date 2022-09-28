@@ -7,14 +7,13 @@ import GHD from "../utils/GHD.json";
 import AW from "../utils/AW.json";
 import SF from "../utils/SF.json";
 
-
 export default function Home() {
   const [tab, setTab] = useState("GHD");
   const [imageId, setImageId] = useState(null);
   const [formData, setFormData] = useState({
     message: "",
     name: "",
-    name_2:"",
+    name_2: "",
     publicId: null,
     error: false
   });
@@ -34,7 +33,6 @@ export default function Home() {
   };
 
   return (
-    
     <div className="p-10">
       <Head>
         <title>Warm Glow Giving</title>
@@ -159,16 +157,16 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                
               )}
               {formData.error && (
                 <p className="text-sm text-red-500">Please select an image</p>
               )}
             </section>
-            
           </CloudinaryContext>
-        <div className="mb-6">
-            <label className="block text-sm text-[#535353] mb-2">Specify Recipient:</label>
+          <div className="mb-6">
+            <label className="block text-sm text-[#535353] mb-2">
+              Specify Recipient:
+            </label>
             <input
               required
               name="name_2"
@@ -179,7 +177,8 @@ export default function Home() {
           </div>
           <div class="flex justify-center">
             <div class="mb-3 xl:w-96">
-              <select class="form-select appearance-none
+              <select
+                class="form-select appearance-none
                 block
                 w-full
                 px-3
@@ -193,45 +192,21 @@ export default function Home() {
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-                  <option selected>Pick a Charity --</option>
-                  <option value="1">charity_1</option>
-                  <option value="2">charity_2</option>
-                  <option value="3">charity_3</option>
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                aria-label="Default select example"
+              >
+                <option selected>Pick a Charity --</option>
+                <option value="1">charity_1</option>
+                <option value="2">charity_2</option>
+                <option value="3">charity_3</option>
               </select>
             </div>
           </div>
           <div className="mb-6">
-            <div class="flex justify-center">
-  <div class="mb-3 xl:w-96">
-              <label for="exampleNumber0" class="form-label inline-block mb-2 text-gray-700"
-                >Donation Amount ($)</label
-              >
-                <input
-                  type="number"
-                  class="
-                    form-control
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                  "
-                  id="exampleNumber0"
-                  placeholder="Number input"
-                />
-              </div>
-            </div>
-            <label className="block text-sm text-[#535353] mb-2">Write a Personal Message:</label>
+            <div class="flex justify-center"></div>
+            <label className="block text-sm text-[#535353] mb-2">
+              Write a Personal Message:
+            </label>
             <textarea
               rows="4"
               required
@@ -243,7 +218,9 @@ export default function Home() {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-sm text-[#535353] mb-2">Sign your Name:</label>
+            <label className="block text-sm text-[#535353] mb-2">
+              Sign your Name:
+            </label>
             <input
               required
               name="name"
