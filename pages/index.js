@@ -86,28 +86,30 @@ export default function Home() {
                 Select Card Art:
               </label>
               {tab === "GHD" ? (
-                <div className="flex items-center">
-                  {GHD.map((img) => (
-                    <div
-                      key={img.id}
-                      className={`mr-2 ${
-                        img.id === imageId ? "border-[#1D4ED8] border-4" : ""
-                      }`}
-                      onClick={() => {
-                        setImageId(img.id);
-                        setFormData({
-                          ...formData,
-                          publicId: img.publicId,
-                          error: false
-                        });
-                        setShowCard(false);
-                      }}
-                    >
-                      <Image publicId={img.publicId}>
-                        <Transformation crop="scale" width="80" height="80" />
-                      </Image>
-                    </div>
-                  ))}
+                <div className="flex flex-col items-center">
+                  <div className="mb-1 flex w-full justify-center">
+                    {GHD.map((img) => (
+                      <div
+                        key={img.id}
+                        className={`mr-2 ${
+                          img.id === imageId ? "border-[#1D4ED8] border-4" : ""
+                        }`}
+                        onClick={() => {
+                          setImageId(img.id);
+                          setFormData({
+                            ...formData,
+                            publicId: img.publicId,
+                            error: false
+                          });
+                          setShowCard(false);
+                        }}
+                      >
+                        <Image publicId={img.publicId}>
+                          <Transformation crop="scale" width="80" height="80" />
+                        </Image>
+                      </div>
+                    ))}
+                  </div>
                   <div class="flex justify-center">
                     <div class="mb-3 xl:w-96">
                       <select
@@ -166,28 +168,31 @@ export default function Home() {
                   </div>
                 </div>
               ) : tab === "AW" ? (
-                <div className="flex items-center">
-                  {AW.map((img) => (
-                    <div
-                      key={img.id}
-                      className={`mr-2 ${
-                        img.id === imageId ? "border-[#1D4ED8] border-4" : ""
-                      }`}
-                      onClick={() => {
-                        setImageId(img.id);
-                        setFormData({
-                          ...formData,
-                          publicId: img.publicId,
-                          error: false
-                        });
-                        setShowCard(false);
-                      }}
-                    >
-                      <Image publicId={img.publicId}>
-                        <Transformation crop="scale" width="80" height="80" />
-                      </Image>
-                    </div>
-                  ))}
+                <div className="flex flex-col items-center">
+                  <div className="flex mb-1 w-full justify-center">
+                    {AW.map((img) => (
+                      <div
+                        key={img.id}
+                        className={`mr-2 ${
+                          img.id === imageId ? "border-[#1D4ED8] border-4" : ""
+                        }`}
+                        onClick={() => {
+                          setImageId(img.id);
+                          setFormData({
+                            ...formData,
+                            publicId: img.publicId,
+                            error: false
+                          });
+                          setShowCard(false);
+                        }}
+                      >
+                        <Image publicId={img.publicId}>
+                          <Transformation crop="scale" width="80" height="80" />
+                        </Image>
+                      </div>
+                    ))}
+                  </div>
+
                   <div class="flex justify-center">
                     <div class="mb-3 xl:w-96">
                       <select
@@ -218,28 +223,30 @@ export default function Home() {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center">
-                  {SF.map((img) => (
-                    <div
-                      key={img.id}
-                      className={`mr-2 ${
-                        img.id === imageId ? "border-[#1D4ED8] border-4" : ""
-                      }`}
-                      onClick={() => {
-                        setImageId(img.id);
-                        setFormData({
-                          ...formData,
-                          publicId: img.publicId,
-                          error: false
-                        });
-                        setShowCard(false);
-                      }}
-                    >
-                      <Image publicId={img.publicId}>
-                        <Transformation crop="scale" width="80" height="80" />
-                      </Image>
-                    </div>
-                  ))}
+                <div className="flex flex-col items-center">
+                  <div className="flex mb-1 w-full justify-center">
+                    {SF.map((img) => (
+                      <div
+                        key={img.id}
+                        className={`mr-2 ${
+                          img.id === imageId ? "border-[#1D4ED8] border-4" : ""
+                        }`}
+                        onClick={() => {
+                          setImageId(img.id);
+                          setFormData({
+                            ...formData,
+                            publicId: img.publicId,
+                            error: false
+                          });
+                          setShowCard(false);
+                        }}
+                      >
+                        <Image publicId={img.publicId}>
+                          <Transformation crop="scale" width="80" height="80" />
+                        </Image>
+                      </div>
+                    ))}
+                  </div>
                   <div class="flex justify-center">
                     <div class="mb-3 xl:w-96">
                       <select
