@@ -7,8 +7,6 @@ The objective of this site is to be a free, easy to use eCard creator specifical
 
 To do list:
 
--Deside which charities will be in the lists (one list for each cause area), I think GiveWell funds and charities on The Life You Can Save 
-
 -Write the code to have the charity list be different depending on the cause area tab selected
 
 -Collect the art from the artists that have said they would donate and size them all to be the same, then replace the stand in art with the real art
