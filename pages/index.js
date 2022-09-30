@@ -1,15 +1,26 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { Card } from "../components/Card";
 import GHD from "../utils/GHD.json";
+import GHDCharityList from "../utils/GHD_charity_list.json";
+import AWCharityList from "../utils/AW_charity_list.json";
+import SFCharityList from "../utils/SF_charity_list.json";
 import AW from "../utils/AW.json";
 import SF from "../utils/SF.json";
 
 export default function Home() {
   const [tab, setTab] = useState("GHD");
   const [imageId, setImageId] = useState(null);
+  const [showCharityDescription, setShowCharityDescription] = useState(true);
+  const fullList = GHDCharityList.concat(AWCharityList).concat(SFCharityList);
+  const [selectedCharity, setSelectedCharity] = useState();
+
+  const selectedBlerb = useMemo(() => {
+    return fullList.find((c) => c.name === selectedCharity)?.blerb;
+  }, [selectedCharity, fullList]);
+
   const [formData, setFormData] = useState({
     message: "",
     name: "",
@@ -21,6 +32,10 @@ export default function Home() {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeCharity = (e) => {
+    setSelectedCharity(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -113,6 +128,8 @@ export default function Home() {
                   <div class="flex justify-center">
                     <div class="mb-3 xl:w-96">
                       <select
+                        value={selectedCharity}
+                        onChange={handleChangeCharity}
                         class="form-select appearance-none
                                 block
                                 w-full
@@ -131,40 +148,34 @@ export default function Home() {
                         aria-label="Default select example"
                       >
                         <option selected>Select a Charity </option>
-                        <option value="1">Against Malaria Foundation</option>
-                        <option value="2">
-                          Development Media International
-                        </option>
-                        <option value="3">Equalize Health</option>
-                        <option value="4">Evidence Action</option>
-                        <option value="5">Fistula Foundation</option>
-                        <option value="6">The Fred Hollows Foundation</option>
-                        <option value="7">GiveDirectly</option>
-                        <option value="8">
-                          GAIN’s Salt Iodization Program
-                        </option>
-                        <option value="9">Helen Keller International</option>
-                        <option value="10">
-                          Innovations for Poverty Action
-                        </option>
-                        <option value="11">Iodine Global Network</option>
-                        <option value="12">Living Goods</option>
-                        <option value="13">Malaria Consortium</option>
-                        <option value="14">New Incentives</option>
-                        <option value="15">One Acre Fund</option>
-                        <option value="16">Oxfam</option>
-                        <option value="17">
-                          Population Services International
-                        </option>
-                        <option value="18">
-                          Sanku – Project Healthy Children
-                        </option>
-                        <option value="19">SCI Foundation</option>
-                        <option value="20">Seva Foundation</option>
-                        <option value="21">Village Enterprise</option>
-                        <option value="22">Zusha!</option>
+                        {GHDCharityList.map((c) => (
+                          <option key={c.name} value={c.name}>
+                            {c.name}
+                          </option>
+                        ))}
                       </select>
                     </div>
+                  </div>
+                  <div className="mb-6">
+                    {
+                      GHDCharityList.find((c) => c.name === selectedCharity)
+                        ?.blerb
+                    }
+                  </div>
+                  <div class="form-check">
+                    <input
+                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      type="checkbox"
+                      value=""
+                      checked={showCharityDescription}
+                      onChange={(e) =>
+                        setShowCharityDescription(e.target.checked)
+                      }
+                      id="flexCheckDefault"
+                    />
+                    <label for="flexCheckDefault">
+                      Show charity description
+                    </label>
                   </div>
                 </div>
               ) : tab === "AW" ? (
@@ -196,6 +207,8 @@ export default function Home() {
                   <div class="flex justify-center">
                     <div class="mb-3 xl:w-96">
                       <select
+                        value={selectedCharity}
+                        onChange={handleChangeCharity}
                         class="form-select appearance-none
       block
       w-full
@@ -214,12 +227,34 @@ export default function Home() {
                         aria-label="Default select example"
                       >
                         <option selected>Select a Charity </option>
-                        <option value="1">Animal Welfare Fund</option>
-                        <option value="2">The Humane League</option>
-                        <option value="3">Faunalytics</option>
-                        <option value="4">Wild Animal Initiative</option>
+                        {AWCharityList.map((c) => (
+                          <option key={c.name} value={c.name}>
+                            {c.name}
+                          </option>
+                        ))}
                       </select>
                     </div>
+                  </div>
+                  <div className="mb-6">
+                    {
+                      AWCharityList.find((c) => c.name === selectedCharity)
+                        ?.blerb
+                    }
+                  </div>
+                  <div class="form-check">
+                    <input
+                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      type="checkbox"
+                      value=""
+                      checked={showCharityDescription}
+                      onChange={(e) =>
+                        setShowCharityDescription(e.target.checked)
+                      }
+                      id="flexCheckDefault"
+                    />
+                    <label for="flexCheckDefault">
+                      Show charity description
+                    </label>
                   </div>
                 </div>
               ) : (
@@ -250,6 +285,8 @@ export default function Home() {
                   <div class="flex justify-center">
                     <div class="mb-3 xl:w-96">
                       <select
+                        value={selectedCharity}
+                        onChange={handleChangeCharity}
                         class="form-select appearance-none
       block
       w-full
@@ -268,13 +305,34 @@ export default function Home() {
                         aria-label="Default select example"
                       >
                         <option selected>Select a Charity </option>
-                        <option value="1">Evergreen Collaborative</option>
-                        <option value="2">Clean Air Task Force</option>
-                        <option value="3">Carbon180</option>
-                        <option value="4">Long-Term Future Fund</option>
-                        <option value="5">Longtermism Fund</option>
+                        {SFCharityList.map((c) => (
+                          <option key={c.name} value={c.name}>
+                            {c.name}
+                          </option>
+                        ))}
                       </select>
                     </div>
+                  </div>
+                  <div className="mb-6">
+                    {
+                      SFCharityList.find((c) => c.name === selectedCharity)
+                        ?.blerb
+                    }
+                  </div>
+                  <div class="form-check">
+                    <input
+                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                      type="checkbox"
+                      value=""
+                      checked={showCharityDescription}
+                      onChange={(e) =>
+                        setShowCharityDescription(e.target.checked)
+                      }
+                      id="flexCheckDefault"
+                    />
+                    <label for="flexCheckDefault">
+                      Show charity description
+                    </label>
                   </div>
                 </div>
               )}
