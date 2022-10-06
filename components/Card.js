@@ -1,7 +1,7 @@
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useEffect, useRef, useState } from "react";
 
-export const Card = ({ message, name, publicId, name_2 }) => {
+export const Card = ({ blerb, message, name, publicId, name_2 }) => {
   const ref = useRef(null);
   const [url, setURL] = useState("");
   const [copy, setCopy] = useState("Copy File");
@@ -19,12 +19,25 @@ export const Card = ({ message, name, publicId, name_2 }) => {
   };
 
   return (
-    
     <div>
       <CloudinaryContext cloudName="warmglowgiving">
         <Image publicId={publicId} width={1000} ref={ref}>
           <Transformation crop="fit" effect="blur:100" />
           <Transformation effect="brightness_hsb:-50" />
+          <Transformation
+            color="#FFFFFF"
+            flags="text_disallow_overflow"
+            overlay={{
+              background: "",
+              fontFamily: "Neucha",
+              fontSize: 50,
+              fontWeight: "bold",
+              text: message,
+              textAlign: "center"
+            }}
+            width="800"
+            crop="fit"
+          />
           <Transformation
             color="#FFFFFF"
             flags="text_disallow_overflow"
@@ -46,7 +59,7 @@ export const Card = ({ message, name, publicId, name_2 }) => {
               fontFamily: "Dancing Script",
               fontSize: 50,
               fontWeight: "bold",
-              text: `Dear ${name_2}`
+              text: `Dear ${name_2},`
             }}
           />
           <Transformation
