@@ -32,7 +32,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
               fontFamily: "Neucha",
               fontSize: 50,
               fontWeight: "bold",
-              text: message,
+              text: blerb,
               textAlign: "center"
             }}
             width="800"

@@ -388,7 +388,7 @@ export default function Home() {
         {showCard && (
           <div className="mt-10">
             <Card
-              blerb={formData.selectedBlerb}
+              blerb={selectedBlerb}
               message={formData.message}
               name={formData.name}
               name_2={formData.name_2}
