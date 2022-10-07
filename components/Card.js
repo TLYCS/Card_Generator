@@ -25,57 +25,65 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation crop="fit" effect="blur:100" />
           <Transformation effect="brightness_hsb:-50" />
           <Transformation
-            color="#FFFFFF"
+            color="#050505"
             flags="text_disallow_overflow"
             overlay={{
               background: "",
-              fontFamily: "Neucha",
-              fontSize: 50,
-              fontWeight: "bold",
-              text: blerb,
-              textAlign: "center"
-            }}
-            width="800"
-            crop="fit"
-          />
-          <Transformation
-            color="#FFFFFF"
-            flags="text_disallow_overflow"
-            overlay={{
-              background: "",
-              fontFamily: "Neucha",
-              fontSize: 50,
+              fontFamily: "indie flower",
+              fontSize: 40,
               fontWeight: "bold",
               text: message,
               textAlign: "center"
             }}
-            width="800"
+            width="900"
             crop="fit"
           />
-          <Transformation flags="layer_apply" />
+          <Transformation flags="layer_apply" gravity="south" y="350" />
           <Transformation
-            color="#FFFFFF"
+            color="#3b0505"
+            flags="text_disallow_overflow"
             overlay={{
-              fontFamily: "Dancing Script",
+              background: "",
+              fontFamily: "indie flower",
+              fontSize: 40,
+              fontWeight: "bold",
+              text: blerb,
+              textAlign: "center"
+            }}
+            width="900"
+            crop="fit"
+          />
+          <Transformation flags="layer_apply" gravity="north" y="250" />
+
+          <Transformation
+            color="#050505"
+            overlay={{
+              fontFamily: "indie flower",
+              fontSize: 50,
+              fontWeight: "bold",
+              text: `From, ${name}`
+            }}
+          />
+          <Transformation
+            flags="layer_apply"
+            gravity="south_east"
+            y="50"
+            x="50"
+          />
+          <Transformation
+            color="#050505"
+            overlay={{
+              fontFamily: "indie flower",
               fontSize: 50,
               fontWeight: "bold",
               text: `Dear ${name_2},`
             }}
           />
           <Transformation
-            color="#FFFFFF"
-            overlay={{
-              fontFamily: "Dancing Script",
-              fontSize: 50,
-              fontWeight: "bold",
-              text: `from ${name}`
-            }}
-          />
-          <Transformation
             flags="layer_apply"
-            gravity="center"
-            x="450"
-            y="350"
+            gravity="north_west"
+            y="100"
+            x="50"
           />
         </Image>
       </CloudinaryContext>
