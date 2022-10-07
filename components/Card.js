@@ -33,11 +33,14 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
               fontSize: 50,
               fontWeight: "bold",
               text: blerb,
-              textAlign: "center"
+              textAlign: "center",
+              position: "south",
+              y: "20"
             }}
             width="800"
             crop="fit"
           />
+          <Transformation flags="layer_apply" gravity="south" y="20" />
           <Transformation
             color="#FFFFFF"
             flags="text_disallow_overflow"
@@ -63,6 +66,12 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             }}
           />
           <Transformation
+            flags="layer_apply"
+            gravity="south_west"
+            x="30"
+            y="30"
+          />
+          <Transformation
             color="#FFFFFF"
             overlay={{
               fontFamily: "Dancing Script",
@@ -70,6 +79,12 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
               fontWeight: "bold",
               text: `from ${name}`
             }}
+          />
+          <Transformation
+            flags="layer_apply"
+            gravity="north_west"
+            x="30"
+            y="30"
           />
           <Transformation
             flags="layer_apply"
