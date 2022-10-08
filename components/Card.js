@@ -17,7 +17,6 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
       .then(() => setCopy("Copied!"))
       .catch((err) => console.log("error copying to clipboard", err));
   };
-
   return (
     <div>
       <CloudinaryContext cloudName="warmglowgiving">
@@ -25,55 +24,40 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation crop="fit" effect="blur:100" />
           <Transformation effect="brightness_hsb:-50" />
           <Transformation
-            color="#050505"
-            flags="text_disallow_overflow"
-            overlay={{
-              background: "",
-              fontFamily: "indie flower",
-              fontSize: 40,
-              fontWeight: "bold",
-              text: message,
-              textAlign: "center"
-            }}
-            width="900"
-            crop="fit"
-          />
-          <Transformation flags="layer_apply" gravity="south" y="350" />
-          <Transformation
             color="#3b0505"
             flags="text_disallow_overflow"
             overlay={{
               background: "",
-              fontFamily: "indie flower",
-              fontSize: 40,
+              fontFamily: "Kalam",
+              fontSize: 30,
               fontWeight: "bold",
-              text: blerb,
+              text: blerb + message,
               textAlign: "center"
             }}
-            width="900"
+            width="750"
             crop="fit"
           />
-          <Transformation flags="layer_apply" gravity="north" y="250" />
+          <Transformation flags="layer_apply" gravity="south" y="350" />
 
           <Transformation
-            color="#050505"
+            color="#3b0505"
             overlay={{
-              fontFamily: "indie flower",
+              fontFamily: "Kalam",
               fontSize: 50,
               fontWeight: "bold",
-              text: `From, ${name}`
+              text: `From ${name}`
             }}
           />
           <Transformation
             flags="layer_apply"
             gravity="south_east"
-            y="50"
-            x="50"
+            y="100"
+            x="200"
           />
           <Transformation
-            color="#050505"
+            color="#3b0505"
             overlay={{
-              fontFamily: "indie flower",
+              fontFamily: "Kalam",
               fontSize: 50,
               fontWeight: "bold",
               text: `Dear ${name_2},`
@@ -83,7 +67,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             flags="layer_apply"
             gravity="north_west"
             y="100"
-            x="50"
+            x="200"
           />
         </Image>
       </CloudinaryContext>
