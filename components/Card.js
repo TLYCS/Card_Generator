@@ -22,7 +22,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
       <CloudinaryContext cloudName="warmglowgiving">
         <Image publicId={publicId} width={1000} ref={ref}>
           <Transformation crop="fit" effect="blur:100" />
-          <Transformation effect="brightness_hsb:-50" />
+          <Transformation effect="brightness_hsb:0" />
           <Transformation
             color="#3b0505"
             flags="text_disallow_overflow"
