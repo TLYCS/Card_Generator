@@ -24,23 +24,23 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation crop="fit" effect="blur:100" />
           <Transformation effect="brightness_hsb:0" />
           <Transformation
-            color="#3b0505"
+            color="#000000"
             flags="text_disallow_overflow"
             overlay={{
               background: "",
               fontFamily: "Kalam",
               fontSize: 30,
               fontWeight: "bold",
-              text: blerb + message,
+              text: blerb + " " + message,
               textAlign: "center"
             }}
             width="750"
             crop="fit"
           />
-          <Transformation flags="layer_apply" gravity="south" y="350" />
+          <Transformation flags="layer_apply" gravity="north" y="200" />
 
           <Transformation
-            color="#3b0505"
+            color="#000000"
             overlay={{
               fontFamily: "Kalam",
               fontSize: 50,
@@ -55,7 +55,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             x="200"
           />
           <Transformation
-            color="#3b0505"
+            color="#000000"
             overlay={{
               fontFamily: "Kalam",
               fontSize: 50,

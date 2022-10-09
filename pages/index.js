@@ -174,7 +174,7 @@ export default function Home() {
                       id="flexCheckDefault"
                     />
                     <label for="flexCheckDefault">
-                      Show charity description
+                      Show charity description on Card
                     </label>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function Home() {
                       id="flexCheckDefault"
                     />
                     <label for="flexCheckDefault">
-                      Show charity description
+                      Show charity description on Card
                     </label>
                   </div>
                 </div>
@@ -331,7 +331,7 @@ export default function Home() {
                       id="flexCheckDefault"
                     />
                     <label for="flexCheckDefault">
-                      Show charity description
+                      Show charity description on Card
                     </label>
                   </div>
                 </div>
