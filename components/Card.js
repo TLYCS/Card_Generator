@@ -71,6 +71,14 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             y="100"
             x="200"
           />
+          <p>
+            <a
+              href="https://cloudinary.com/documentation/upload_widget_reference"
+              target="_blank"
+            >
+              Upload Widget Reference
+            </a>
+          </p>
         </Image>
       </CloudinaryContext>
 
