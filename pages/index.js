@@ -58,6 +58,16 @@ export default function Home() {
 
       <main className="">
         <h1 className="text-3xl">Give the Gift of Giving</h1>
+        <ul class="p-5">
+          <ol class="list-decimal">
+            <li>Select the cause area your recipient is interested in.</li>
+            <li>Select art for the card.</li>
+            <li>Select the charity to give to.</li>
+            <li>Make a donation to that charity.</li>
+            <li>Personalize your card.</li>
+            <li>Send your recipient the image or link to your card.</li>
+          </ol>
+        </ul>
         <header className="flex border-b-2 mt-7 mb-7">
           <Link href="#">
             <a
