@@ -427,7 +427,7 @@ export default function Home() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              maxLength={780 - formData.text}
+              maxLength={350}
               className="w-full border-[#B7B3B3] border rounded-sm p-2"
             />
           </div>
