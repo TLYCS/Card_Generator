@@ -36,10 +36,10 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
               textAlign: "center"
             }}
             width="700"
-            height="700"
+            height="850"
             crop="fit"
           />
-          <Transformation flags="layer_apply" gravity="north" y="200" />
+          <Transformation flags="layer_apply" gravity="center" />
 
           <Transformation
             color="#000000"

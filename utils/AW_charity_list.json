@@ -1,22 +1,26 @@
 [
   {
     "name": "Animal Welfare Fund",
+    "size": 238,
     "blerb": "The Animal Welfare Fund aims to effectively improve the well-being of nonhuman animals. The Fund focuses on projects that primarily address farmed animals, as well as projects that could affect other large populations of nonhuman animals.",
     "link": "https://funds.effectivealtruism.org/funds/animal-welfare?utm_source=giving-what-we-can&utm_medium=partner_charity&utm_campaign=partner_charity_donations"
   },
   {
     "name": "The Humane League",
+    "size": 483,
     "blerb": "The Humane League (THL) currently operates in the U.S., Mexico, the U.K., and Japan, where they work to improve animal welfare standards through grassroots campaigns, movement building, veg*n advocacy, research, and advocacy training, as well as through corporate, media, and community outreach. They work to build the animal advocacy movement internationally through the Open Wing Alliance (OWA), a coalition founded by THL whose mission is to end the use of battery cages globally. ",
     "link": "https://animalcharityevaluators.org/charity-review/the-humane-league/"
   },
   {
     "name": "Faunalytics",
-    "blerb": "Faunalytics is a U.S.-based organization working to connect animal advocates with information relevant to advocacy. This mostly involves cоnducting and publishing independent research, working directly with partner organizations on various research projects, and promoting existing research and data for individual advocates through their website’s content library.",
+    "size": 340,
+    "blerb": "Faunalytics is a U.S.-based organization working to connect animal advocates with information relevant to advocacy. This mostly involves publishing independent research, working directly with partner organizations on various research projects, and promoting existing research and data for individual advocates through their content library.",
     "link": "https://animalcharityevaluators.org/charity-review/faunalytics/"
   },
   {
     "name": "Wild Animal Initiative",
-    "blerb": "Wild Animal Initiative (WAI) currently operates in the U.S., where they work to strengthen the animal advocacy movement through creating an academic field dedicated to wild animal welfare. They compile literature reviews, write theoretical and opinion articles, and publish research results on their website and/or in peer-reviewed journals. WAI focuses on identifying and sharing possible research avenues and connecting with more established fields. They also work with researchers from various academic and non-academic institutions to identify potential collaborators, and they recently launched a grant assistance program.",
+    "size": 299,
+    "blerb": "Wild Animal Initiative (WAI) works to strengthen the animal advocacy movement through creating an academic field dedicated to wild animal welfare. They compile literature reviews, write theoretical and opinion articles, and publish research results on their website and/or in peer-reviewed journals.",
     "link": "https://animalcharityevaluators.org/charity-review/wild-animal-initiative/"
   }
 ]

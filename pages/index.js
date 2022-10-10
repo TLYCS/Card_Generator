@@ -27,7 +27,7 @@ export default function Home() {
     name_2: "",
     publicId: null,
     blerb: "",
-    url: "",
+    text: 400,
     error: false
   });
   const [showCard, setShowCard] = useState(false);
@@ -129,6 +129,7 @@ export default function Home() {
                           setFormData({
                             ...formData,
                             publicId: img.publicId,
+                            text: img.size,
                             error: false
                           });
                           setShowCard(false);
@@ -222,6 +223,7 @@ export default function Home() {
                           setFormData({
                             ...formData,
                             publicId: img.publicId,
+                            text: img.size,
                             error: false
                           });
                           setShowCard(false);
@@ -316,6 +318,7 @@ export default function Home() {
                           setFormData({
                             ...formData,
                             publicId: img.publicId,
+                            text: img.size,
                             error: false
                           });
                           setShowCard(false);
@@ -424,7 +427,7 @@ export default function Home() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              maxLength={500}
+              maxLength={780 - formData.text}
               className="w-full border-[#B7B3B3] border rounded-sm p-2"
             />
           </div>
