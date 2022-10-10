@@ -109,12 +109,15 @@ export default function Home() {
         <form onSubmit={handleSubmit} className="lg:w-2/5">
           <CloudinaryContext cloudName="warmglowgiving">
             <section className="mb-6">
-              <label className="block text-sm text-[#535353] mb-2">
-                Select Card Art:
-              </label>
+              <div class="flex flex-col justify-left items-left">
+                <label className="block text-sm text-[#535353] mb-2">
+                  Select Card Art:
+                </label>
+              </div>
+
               {tab === "GHD" ? (
-                <div className="flex flex-col items-center">
-                  <div className="mb-1 flex w-full justify-center">
+                <div className="flex flex-col items-left">
+                  <div className="mb-1 flex w-full justify-left">
                     {GHD.map((img) => (
                       <div
                         key={img.id}
@@ -137,7 +140,10 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <div class="flex justify-center">
+                  <label className="block text-sm text-[#535353] mb-2">
+                    Select Charity:
+                  </label>
+                  <div class="flex justify-left">
                     <div class="mb-3 xl:w-96">
                       <select
                         value={selectedCharity}
@@ -159,7 +165,7 @@ export default function Home() {
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         aria-label="Default select example"
                       >
-                        <option selected>Select a Charity </option>
+                        <option selected> </option>
                         {GHDCharityList.map((c) => (
                           <option key={c.name} value={c.name}>
                             {c.name}
@@ -168,16 +174,18 @@ export default function Home() {
                       </select>
                     </div>
                   </div>
-                  <a
-                    href={
-                      GHDCharityList.find((c) => c.name === selectedCharity)
-                        ?.link
-                    }
-                    class="text-blue-500 underline"
-                  >
-                    {selectedCharity}
-                  </a>
-                  <div className="mb-6">
+                  <div className="p-1">
+                    <a
+                      href={
+                        GHDCharityList.find((c) => c.name === selectedCharity)
+                          ?.link
+                      }
+                      class="text-blue-500 underline"
+                    >
+                      {selectedCharity}
+                    </a>
+                  </div>
+                  <div className="p-1">
                     {
                       GHDCharityList.find((c) => c.name === selectedCharity)
                         ?.blerb
@@ -201,8 +209,8 @@ export default function Home() {
                   </div>
                 </div>
               ) : tab === "AW" ? (
-                <div className="flex flex-col items-center">
-                  <div className="flex mb-1 w-full justify-center">
+                <div className="flex flex-col items-left">
+                  <div className="flex mb-1 w-full justify-left">
                     {AW.map((img) => (
                       <div
                         key={img.id}
@@ -226,7 +234,11 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div class="flex justify-center">
+                  <label className="block text-sm text-[#535353] mb-2">
+                    Select Charity:
+                  </label>
+
+                  <div class="flex justify-left">
                     <div class="mb-3 xl:w-96">
                       <select
                         value={selectedCharity}
@@ -248,7 +260,7 @@ export default function Home() {
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         aria-label="Default select example"
                       >
-                        <option selected>Select a Charity </option>
+                        <option selected> </option>
                         {AWCharityList.map((c) => (
                           <option key={c.name} value={c.name}>
                             {c.name}
@@ -257,16 +269,18 @@ export default function Home() {
                       </select>
                     </div>
                   </div>
-                  <a
-                    href={
-                      AWCharityList.find((c) => c.name === selectedCharity)
-                        ?.link
-                    }
-                    class="text-blue-500 underline"
-                  >
-                    {selectedCharity}
-                  </a>
-                  <div className="mb-6">
+                  <div className="p-1">
+                    <a
+                      href={
+                        AWCharityList.find((c) => c.name === selectedCharity)
+                          ?.link
+                      }
+                      class="text-blue-500 underline"
+                    >
+                      {selectedCharity}
+                    </a>
+                  </div>
+                  <div className="p-1">
                     {
                       AWCharityList.find((c) => c.name === selectedCharity)
                         ?.blerb
@@ -289,8 +303,8 @@ export default function Home() {
                   </div>
                 </div>
               ) : (
-                <div className="flex flex-col items-center">
-                  <div className="flex mb-1 w-full justify-center">
+                <div className="flex flex-col items-left">
+                  <div className="flex mb-1 w-full justify-left">
                     {SF.map((img) => (
                       <div
                         key={img.id}
@@ -313,7 +327,10 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <div class="flex justify-center">
+                  <label className="block text-sm text-[#535353] mb-2">
+                    Select Charity:
+                  </label>
+                  <div class="flex justify-left">
                     <div class="mb-3 xl:w-96">
                       <select
                         value={selectedCharity}
@@ -335,7 +352,7 @@ export default function Home() {
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         aria-label="Default select example"
                       >
-                        <option selected>Select a Charity </option>
+                        <option selected> </option>
                         {SFCharityList.map((c) => (
                           <option key={c.name} value={c.name}>
                             {c.name}
@@ -344,16 +361,18 @@ export default function Home() {
                       </select>
                     </div>
                   </div>
-                  <a
-                    href={
-                      SFCharityList.find((c) => c.name === selectedCharity)
-                        ?.link
-                    }
-                    class="text-blue-500 underline"
-                  >
-                    {selectedCharity}
-                  </a>
-                  <div className="mb-6">
+                  <div className="p-1">
+                    <a
+                      href={
+                        SFCharityList.find((c) => c.name === selectedCharity)
+                          ?.link
+                      }
+                      class="text-blue-500 underline"
+                    >
+                      {selectedCharity}
+                    </a>
+                  </div>
+                  <div className="p-1">
                     {
                       SFCharityList.find((c) => c.name === selectedCharity)
                         ?.blerb
@@ -395,7 +414,7 @@ export default function Home() {
             />
           </div>
           <div className="mb-6">
-            <div class="flex justify-center"></div>
+            <div class="flex justify-left"></div>
             <label className="block text-sm text-[#535353] mb-2">
               Write a Personal Message:
             </label>
