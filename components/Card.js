@@ -17,6 +17,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
       .then(() => setCopy("Copied!"))
       .catch((err) => console.log("error copying to clipboard", err));
   };
+
   return (
     <div>
       <CloudinaryContext cloudName="warmglowgiving">
@@ -31,10 +32,11 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
               fontFamily: "Kalam",
               fontSize: 30,
               fontWeight: "bold",
-              text: blerb + " " + message,
+              text: blerb + "%0D%0A%0D%0A" + message,
               textAlign: "center"
             }}
-            width="750"
+            width="700"
+            height="700"
             crop="fit"
           />
           <Transformation flags="layer_apply" gravity="north" y="200" />
