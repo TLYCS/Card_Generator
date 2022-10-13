@@ -54,7 +54,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             flags="layer_apply"
             gravity="south_east"
             y="100"
-            x="100"
+            x="140"
           />
           <Transformation
             color="#000000"
@@ -69,7 +69,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             flags="layer_apply"
             gravity="north_west"
             y="100"
-            x="100"
+            x="140"
           />
           <p>
             <a
