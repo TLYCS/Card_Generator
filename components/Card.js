@@ -29,7 +29,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             flags="text_disallow_overflow"
             overlay={{
               background: "",
-              fontFamily: "Zilla Slab",
+              fontFamily: "Quicksand",
               fontSize: 30,
               fontWeight: "bold",
               text: blerb + "%0D%0A%0D%0A" + message,
@@ -44,7 +44,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Zilla Slab",
+              fontFamily: "Quicksand",
               fontSize: 50,
               fontWeight: "bold",
               text: `From ${name}`
@@ -59,7 +59,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Zilla Slab",
+              fontFamily: "Quicksand",
               fontSize: 50,
               fontWeight: "bold",
               text: `Dear ${name_2},`
