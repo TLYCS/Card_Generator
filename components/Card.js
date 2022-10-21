@@ -29,8 +29,8 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             flags="text_disallow_overflow"
             overlay={{
               background: "",
-              fontFamily: "Quicksand",
-              fontSize: 30,
+              fontFamily: "Bad Script",
+              fontSize: 35,
               fontWeight: "bold",
               text: blerb + "%0D%0A%0D%0A" + message,
               textAlign: "center"
@@ -39,27 +39,42 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             height="900"
             crop="fit"
           />
-          <Transformation flags="layer_apply" gravity="center" />
+          <Transformation flags="layer_apply" gravity="north" y="150" />
 
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Quicksand",
+              fontFamily: "Bad Script",
               fontSize: 50,
               fontWeight: "bold",
-              text: `From ${name}`
+              text: `Sincerely,`
             }}
           />
           <Transformation
             flags="layer_apply"
-            gravity="south_east"
-            y="100"
-            x="140"
+            gravity="south_west"
+            y="200"
+            x="400"
           />
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Quicksand",
+              fontFamily: "Bad Script",
+              fontSize: 50,
+              fontWeight: "bold",
+              text: `${name}`
+            }}
+          />
+          <Transformation
+            flags="layer_apply"
+            gravity="south_west"
+            y="150"
+            x="450"
+          />
+          <Transformation
+            color="#000000"
+            overlay={{
+              fontFamily: "Bad Script",
               fontSize: 50,
               fontWeight: "bold",
               text: `Dear ${name_2},`
@@ -68,8 +83,8 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             flags="layer_apply"
             gravity="north_west"
-            y="100"
-            x="140"
+            y="50"
+            x="50"
           />
           <p>
             <a
