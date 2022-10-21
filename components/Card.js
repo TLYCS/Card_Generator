@@ -30,7 +30,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             overlay={{
               background: "",
               fontFamily: "Bad Script",
-              fontSize: 35,
+              fontSize: 30,
               fontWeight: "bold",
               text: blerb + "%0D%0A%0D%0A" + message,
               textAlign: "center"
@@ -68,8 +68,8 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             flags="layer_apply"
             gravity="south_west"
-            y="150"
-            x="450"
+            y="125"
+            x="500"
           />
           <Transformation
             color="#000000"

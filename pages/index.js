@@ -371,7 +371,7 @@ export default function Home() {
           <div className="mb-6">
             <div class="flex justify-left"></div>
             <label className="block text-sm text-[#535353] mb-2">
-              Write a Personal Message:
+              Write a Personal Message (does not support hard returns):
             </label>
             <textarea
               rows="4"
