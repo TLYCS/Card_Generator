@@ -13,7 +13,6 @@ import SF from "../utils/SF.json";
 export default function Home() {
   const [tab, setTab] = useState("GHD");
   const [imageId, setImageId] = useState(null);
-  const [showCharityDescription, setShowCharityDescription] = useState(true);
   const fullList = GHDCharityList.concat(AWCharityList).concat(SFCharityList);
   const [selectedCharity, setSelectedCharity] = useState();
 
@@ -192,22 +191,6 @@ export default function Home() {
                         ?.blerb
                     }
                   </div>
-
-                  <div class="form-check">
-                    <input
-                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                      type="checkbox"
-                      value=""
-                      checked={showCharityDescription}
-                      onChange={(e) =>
-                        setShowCharityDescription(e.target.checked)
-                      }
-                      id="flexCheckDefault"
-                    />
-                    <label for="flexCheckDefault">
-                      Show charity description on Card
-                    </label>
-                  </div>
                 </div>
               ) : tab === "AW" ? (
                 <div className="flex flex-col items-left">
@@ -288,21 +271,6 @@ export default function Home() {
                         ?.blerb
                     }
                   </div>
-                  <div class="form-check">
-                    <input
-                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                      type="checkbox"
-                      value=""
-                      checked={showCharityDescription}
-                      onChange={(e) =>
-                        setShowCharityDescription(e.target.checked)
-                      }
-                      id="flexCheckDefault"
-                    />
-                    <label for="flexCheckDefault">
-                      Show charity description on Card
-                    </label>
-                  </div>
                 </div>
               ) : (
                 <div className="flex flex-col items-left">
@@ -380,22 +348,6 @@ export default function Home() {
                       SFCharityList.find((c) => c.name === selectedCharity)
                         ?.blerb
                     }
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                      type="checkbox"
-                      value=""
-                      checked={showCharityDescription}
-                      onChange={(e) =>
-                        setShowCharityDescription(e.target.checked)
-                      }
-                      id="flexCheckDefault"
-                    />
-                    <label for="flexCheckDefault">
-                      Show charity description on Card
-                    </label>
                   </div>
                 </div>
               )}
