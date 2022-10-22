@@ -29,7 +29,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             flags="text_disallow_overflow"
             overlay={{
               background: "",
-              fontFamily: "Bad Script",
+              fontFamily: "Handlee",
               fontSize: 30,
               fontWeight: "bold",
               text: blerb + "%0D%0A%0D%0A" + message,
@@ -44,7 +44,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Bad Script",
+              fontFamily: "Handlee",
               fontSize: 50,
               fontWeight: "bold",
               text: `Sincerely,`
@@ -53,13 +53,13 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             flags="layer_apply"
             gravity="south_west"
-            y="125"
+            y="225"
             x="400"
           />
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Bad Script",
+              fontFamily: "Handlee",
               fontSize: 50,
               fontWeight: "bold",
               text: `${name}`
@@ -68,13 +68,13 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             flags="layer_apply"
             gravity="south_west"
-            y="75"
+            y="175"
             x="500"
           />
           <Transformation
             color="#000000"
             overlay={{
-              fontFamily: "Bad Script",
+              fontFamily: "Handlee",
               fontSize: 50,
               fontWeight: "bold",
               text: `Dear ${name_2},`
