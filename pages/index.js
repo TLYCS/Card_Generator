@@ -15,6 +15,7 @@ export default function Home() {
   const [imageId, setImageId] = useState(null);
   const fullList = GHDCharityList.concat(AWCharityList).concat(SFCharityList);
   const [selectedCharity, setSelectedCharity] = useState();
+  const [selectedFontSize, setSelectedFontSize] = useState(28);
 
   const selectedBlerb = useMemo(() => {
     return fullList.find((c) => c.name === selectedCharity)?.blerb;
@@ -27,6 +28,7 @@ export default function Home() {
     publicId: null,
     blerb: "",
     text: 400,
+    fontSize: 28,
     error: false
   });
   const [showCard, setShowCard] = useState(false);
@@ -37,6 +39,10 @@ export default function Home() {
 
   const handleChangeCharity = (e) => {
     setSelectedCharity(e.target.value);
+  };
+
+  const handleFontSize = (e) => {
+    setSelectedFontSize(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -141,14 +147,15 @@ export default function Home() {
                     ))}
                   </div>
                   <label className="block text-sm text-[#535353] mb-2">
-                    Select Charity:
+                    Select a Charity:
                   </label>
-                  <div class="flex justify-left">
-                    <div class="mb-3 xl:w-96">
-                      <select
-                        value={selectedCharity}
-                        onChange={handleChangeCharity}
-                        class="form-select appearance-none
+                  <div className="mb-6">
+                    <div class="flex justify-left">
+                      <div class="mb-3 xl:w-96">
+                        <select
+                          value={selectedCharity}
+                          onChange={handleChangeCharity}
+                          class="form-select appearance-none
                                 block
                                 w-full
                                 px-3
@@ -163,15 +170,16 @@ export default function Home() {
                                 ease-in-out
                                 m-0
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        aria-label="Default select example"
-                      >
-                        <option selected> </option>
-                        {GHDCharityList.map((c) => (
-                          <option key={c.name} value={c.name}>
-                            {c.name}
-                          </option>
-                        ))}
-                      </select>
+                          aria-label="Default select example"
+                        >
+                          <option selected> </option>
+                          {GHDCharityList.map((c) => (
+                            <option key={c.name} value={c.name}>
+                              {c.name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
                   </div>
                   <div className="p-1">
@@ -223,12 +231,12 @@ export default function Home() {
                     Select Charity:
                   </label>
 
-                  <div class="flex justify-left">
-                    <div class="mb-3 xl:w-96">
-                      <select
-                        value={selectedCharity}
-                        onChange={handleChangeCharity}
-                        class="form-select appearance-none
+                  <div class="flex justify-left"></div>
+                  <div class="mb-3 xl:w-96">
+                    <select
+                      value={selectedCharity}
+                      onChange={handleChangeCharity}
+                      class="form-select appearance-none
       block
       w-full
       px-3
@@ -243,16 +251,15 @@ export default function Home() {
       ease-in-out
       m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        aria-label="Default select example"
-                      >
-                        <option selected> </option>
-                        {AWCharityList.map((c) => (
-                          <option key={c.name} value={c.name}>
-                            {c.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                      aria-label="Default select example"
+                    >
+                      <option selected> </option>
+                      {AWCharityList.map((c) => (
+                        <option key={c.name} value={c.name}>
+                          {c.name}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div className="p-1">
                     <a
@@ -301,36 +308,35 @@ export default function Home() {
                   <label className="block text-sm text-[#535353] mb-2">
                     Select Charity:
                   </label>
-                  <div class="flex justify-left">
-                    <div class="mb-3 xl:w-96">
-                      <select
-                        value={selectedCharity}
-                        onChange={handleChangeCharity}
-                        class="form-select appearance-none
-      block
-      w-full
-      px-3
-      py-1.5
-      text-base
-      font-normal
-      text-gray-700
-      bg-white bg-clip-padding bg-no-repeat
-      border border-solid border-gray-300
-      rounded
-      transition
-      ease-in-out
-      m-0
-      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        aria-label="Default select example"
-                      >
-                        <option selected> </option>
-                        {SFCharityList.map((c) => (
-                          <option key={c.name} value={c.name}>
-                            {c.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                  <div class="flex justify-left"></div>
+                  <div class="mb-3 xl:w-96">
+                    <select
+                      value={selectedCharity}
+                      onChange={handleChangeCharity}
+                      class="form-select appearance-none
+                                block
+                                w-full
+                                px-3
+                                py-1.5
+                                text-base
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                      aria-label="Default select example"
+                    >
+                      <option selected> </option>
+                      {SFCharityList.map((c) => (
+                        <option key={c.name} value={c.name}>
+                          {c.name}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div className="p-1">
                     <a
@@ -384,6 +390,44 @@ export default function Home() {
             />
           </div>
           <div className="mb-6">
+            <div class="flex justify-left"></div>
+            <label className="block text-sm text-[#535353] mb-2">
+              Select a font size:
+            </label>
+            <div class="mb-3 xl:w-96">
+              <select
+                value={selectedFontSize}
+                onChange={handleFontSize}
+                class="form-select appearance-none
+                                block
+                                w-full
+                                px-3
+                                py-1.5
+                                text-base
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                aria-label="Default select example"
+              >
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+                <option value="26">26</option>
+                <option value="28">28</option>
+                <option value="30">30</option>
+                <option value="32">32</option>
+                <option value="34">34</option>
+                <option value="36">36</option>
+              </select>
+            </div>
+          </div>
+          <div className="mb-6">
             <label className="block text-sm text-[#535353] mb-2">
               Sign your Name:
             </label>
@@ -408,6 +452,7 @@ export default function Home() {
               name={formData.name}
               name_2={formData.name_2}
               publicId={formData.publicId}
+              fontSize={selectedFontSize}
             />
           </div>
         )}

@@ -1,7 +1,7 @@
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useEffect, useRef, useState } from "react";
 
-export const Card = ({ blerb, message, name, publicId, name_2 }) => {
+export const Card = ({ blerb, message, name, publicId, name_2, fontSize }) => {
   const ref = useRef(null);
   const [url, setURL] = useState("");
   const [copy, setCopy] = useState("Copy File");
@@ -30,7 +30,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             overlay={{
               background: "",
               fontFamily: "Handlee",
-              fontSize: 30,
+              fontSize: fontSize,
               fontWeight: "bold",
               text: blerb + "%0D%0A%0D%0A" + message,
               textAlign: "center"
@@ -68,7 +68,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
           <Transformation
             flags="layer_apply"
             gravity="south_west"
-            y="175"
+            y="150"
             x="500"
           />
           <Transformation
