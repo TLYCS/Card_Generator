@@ -1,7 +1,7 @@
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useEffect, useRef, useState } from "react";
 
-export const Card = ({ blerb, message, name, publicId, name_2 }) => {
+export const Card = ({ blerb, message, name, publicId, name_2, font_size }) => {
   const ref = useRef(null);
   const [url, setURL] = useState("");
   const [copy, setCopy] = useState("Copy File");
@@ -30,7 +30,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             overlay={{
               background: "",
               fontFamily: "Handlee",
-              fontSize: 30,
+              fontSize: font_size,
               fontWeight: "bold",
               text: blerb + "%0D%0A%0D%0A" + message,
               textAlign: "center"
@@ -45,7 +45,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             color="#000000"
             overlay={{
               fontFamily: "Handlee",
-              fontSize: 50,
+              fontSize: font_size + 20,
               fontWeight: "bold",
               text: `Sincerely,`
             }}
@@ -60,7 +60,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             color="#000000"
             overlay={{
               fontFamily: "Handlee",
-              fontSize: 50,
+              fontSize: font_size + 20,
               fontWeight: "bold",
               text: `${name}`
             }}
@@ -75,7 +75,7 @@ export const Card = ({ blerb, message, name, publicId, name_2 }) => {
             color="#000000"
             overlay={{
               fontFamily: "Handlee",
-              fontSize: 50,
+              fontSize: font_size + 20,
               fontWeight: "bold",
               text: `Dear ${name_2},`
             }}

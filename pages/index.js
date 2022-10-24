@@ -7,6 +7,7 @@ import GHD from "../utils/GHD.json";
 import GHDCharityList from "../utils/GHD_charity_list.json";
 import AWCharityList from "../utils/AW_charity_list.json";
 import SFCharityList from "../utils/SF_charity_list.json";
+import font_size_list from "../utils/font_size_list.json";
 import AW from "../utils/AW.json";
 import SF from "../utils/SF.json";
 
@@ -15,6 +16,7 @@ export default function Home() {
   const [imageId, setImageId] = useState(null);
   const fullList = GHDCharityList.concat(AWCharityList).concat(SFCharityList);
   const [selectedCharity, setSelectedCharity] = useState();
+  const [selecteFontSize, setSelectedFontSize] = useState();
 
   const selectedBlerb = useMemo(() => {
     return fullList.find((c) => c.name === selectedCharity)?.blerb;
@@ -26,7 +28,8 @@ export default function Home() {
     name_2: "",
     publicId: null,
     blerb: "",
-    text: 400,
+    text: 350,
+    font_size: 30,
     error: false
   });
   const [showCard, setShowCard] = useState(false);
@@ -37,6 +40,10 @@ export default function Home() {
 
   const handleChangeCharity = (e) => {
     setSelectedCharity(e.target.value);
+  };
+
+  const handleChangeFontSize = (e) => {
+    setSelectedFontSize(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -254,22 +261,53 @@ export default function Home() {
                       </select>
                     </div>
                   </div>
+
+                  <label className="block text-sm text-[#535353] mb-2">
+                    Select Font Size:
+                  </label>
+
+                  <div class="flex justify-left">
+                    <div class="mb-3 xl:w-96">
+                      <select
+                        value={selectedCharity}
+                        onChange={handleChangeCharity}
+                        class="form-select appearance-none
+block
+w-full
+px-3
+py-1.5
+text-base
+font-normal
+text-gray-700
+bg-white bg-clip-padding bg-no-repeat
+border border-solid border-gray-300
+rounded
+transition
+ease-in-out
+m-0
+focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        aria-label="Default select example"
+                      >
+                        <option selected> </option>
+                        {font_size_list.map((c) => (
+                          <option key={c.name} value={c.name}>
+                            {c.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="p-1">
                     <a
                       href={
-                        AWCharityList.find((c) => c.name === selectedCharity)
+                        font_size_list.find((c) => c.name === selecteFontSize)
                           ?.link
                       }
                       class="text-blue-500 underline"
                     >
-                      {selectedCharity}
+                      {selecteFontSize}
                     </a>
-                  </div>
-                  <div className="p-1">
-                    {
-                      AWCharityList.find((c) => c.name === selectedCharity)
-                        ?.blerb
-                    }
                   </div>
                 </div>
               ) : (
@@ -374,15 +412,17 @@ export default function Home() {
               Write a Personal Message (does not support hard returns):
             </label>
             <textarea
-              rows="4"
+              rows="3"
               required
               name="message"
               value={formData.message}
               onChange={handleChange}
-              maxLength={350}
+              maxLength={700 - formData.size}
               className="w-full border-[#B7B3B3] border rounded-sm p-2"
             />
+            <p class="text-ellipsis overflow-hidden ...">...</p>
           </div>
+
           <div className="mb-6">
             <label className="block text-sm text-[#535353] mb-2">
               Sign your Name:
@@ -408,6 +448,7 @@ export default function Home() {
               name={formData.name}
               name_2={formData.name_2}
               publicId={formData.publicId}
+              font_size={selecteFontSize}
             />
           </div>
         )}
